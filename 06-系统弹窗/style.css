@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "PixelVJVeranda", Tahoma;
+
+    user-select: none;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: url(bg.jpg) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.box {
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #ece9d8;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+.box .title {
+    width: 100%;
+    height: 20%;
+    line-height: 30px;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    padding: 0 10px;
+    font-weight: bold;
+    background-color: #0934c1;
+
+    cursor: grab;
+    position: relative;
+}
+.box .close {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 25px;
+    height: 25px;
+    font-size: 1.5em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+
+    background: linear-gradient(to bottom, #ff0000, #440000);
+}
+
+.box .text {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+}
+.box .text .error {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box .text .error .errorbox {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+
+    background: linear-gradient(to bottom, #ff0000, #440000);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+.box .text .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.box button {
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    cursor: pointer;
+}

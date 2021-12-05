@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+            <div class="title">
+                MUS Application Error
+                <div class="close">×</div>
+            </div>
+            <div class="text">
+                <div class="error">
+                    <div class="errorbox">×</div>
+                </div>
+                <div class="content">The PC has some unstoppable mistakes</div>
+            </div>
+            <button onclick="refresh()">OK</button>
+        </div>
+    </div>
+    <script>
+        let box = document.getElementsByClassName('box')[0];
+        let mousedown = false;
+        let offset = { top:0, left:0 };
+
+        box.addEventListener('mousedown', (e) => {
+            mousedown = true;
+
+            let bounding = e.target.getBoundingClientRect();
+
+            offset.left = e.clientX - bounding.left;
+            offset.top = e.clientY - bounding.top;
+        })
+
+        window.addEventListener('mousemove', debounce(duplicate, 10));
+
+        function duplicate(e) {
+            if(mousedown) {
+                box.style.left = `${e.clientX - offset.left * 0.5}px`;
+                box.style.top = `${e.clientY - offset.top}px`;
+
+                let clone = box.cloneNode(true);
+                clone.removeAttribute('id');
+                document.getElementsByClassName('main')[0].appendChild(clone);
+            }
+        }
+
+        window.addEventListener('mouseup', () => {
+            mousedown = false;
+        })
+
+        // 防抖
+        function debounce(func, timeout = 100) {
+            let timer;
+            return (...args) => {
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    func.apply(this, args)
+                }, timeout);
+            }
+        }
+
+        // 刷新页面
+        function refresh() {
+            location.reload()
+        }
+    </script>
+</body>
+</html>
