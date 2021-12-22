@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container flex">
+    <div class="box flex">
+      <div class="item">
+        <div class="numberbox">
+          <div class="number">0</div>
+          <div class="number">1</div>
+          <div class="number">2</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="numberbox">
+          <div class="number">0</div>
+          <div class="number">1</div>
+          <div class="number">2</div>
+          <div class="number">3</div>
+          <div class="number">4</div>
+          <div class="number">5</div>
+          <div class="number">6</div>
+          <div class="number">7</div>
+          <div class="number">8</div>
+          <div class="number">9</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="numberbox">
+          <div class="number">0</div>
+          <div class="number">1</div>
+          <div class="number">2</div>
+          <div class="number">3</div>
+          <div class="number">4</div>
+          <div class="number">5</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="numberbox">
+          <div class="number">0</div>
+          <div class="number">1</div>
+          <div class="number">2</div>
+          <div class="number">3</div>
+          <div class="number">4</div>
+          <div class="number">5</div>
+          <div class="number">6</div>
+          <div class="number">7</div>
+          <div class="number">8</div>
+          <div class="number">9</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="numberbox">
+          <div class="number">0</div>
+          <div class="number">1</div>
+          <div class="number">2</div>
+          <div class="number">3</div>
+          <div class="number">4</div>
+          <div class="number">5</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="numberbox">
+          <div class="number">0</div>
+          <div class="number">1</div>
+          <div class="number">2</div>
+          <div class="number">3</div>
+          <div class="number">4</div>
+          <div class="number">5</div>
+          <div class="number">6</div>
+          <div class="number">7</div>
+          <div class="number">8</div>
+          <div class="number">9</div>
+        </div>
+      </div>
+    </div>
+    <div class="time">
+      <div class="time_item flex"></div>
+      <div class="time_item flex"></div>
+      <div class="time_item flex"></div>
+      <div class="time_item flex"></div>
+      <div class="time_item flex"></div>
+      <div class="time_item flex"></div>
+    </div>
+    <div class="dot">
+      <div class="dot_item flex">:</div>
+      <div class="dot_item flex">:</div>
+    </div>
+  </div>
+  <script>
+    let vw = document.body.clientWidth/100;
+    let vh = document.body.clientHeight/100;
+    let numberboxs = document.getElementsByClassName('numberbox');
+    let time_items = document.getElementsByClassName('time_item');
+  
+    function startTime() {
+      let now = new Date();
+      let h = checkTime(now.getHours());
+      let m = checkTime(now.getMinutes());
+      let s = checkTime(now.getSeconds());
+      let timeList = (h+''+m+''+s).split('').map(item=>parseInt(item));
+
+      for(let i=0; i<6; i++) {
+        let offset = 50 * vh - 2.5 * (2*timeList[i]+1) * vw;
+        numberboxs[i].style.top = offset + 'px';
+        time_items[i].innerText = timeList[i];
+        numberboxs[i].getElementsByClassName('number')[timeList[i]].style.opacity = 1;
+      }
+
+      setTimeout(function(){startTime()},500)
+    }
+
+    function checkTime(i) {
+      return i<10?'0'+i:i;
+    }
+
+    startTime();
+  </script>
+</body>
+</html>
