@@ -1,4 +1,4 @@
-项目预览主页 [每日小记](https://daybyday.vychod.top)
+项目预览主页 [每日小记](http://daybyday.vychod.top/)
 
 2021年9月21日 中秋佳节，实验室不发月饼，只好自行画了个月饼。
 
