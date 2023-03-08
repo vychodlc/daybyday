@@ -49,8 +49,13 @@
 </head>
 <body>
   <div class="hello" id="hello">
-    <button onclick="change(0)">入校</button>
-    <button onclick="change(1)">出校</button>
+    <input type="text" name="name" id="inputName" placeholder="不输入默认是“张伟”">
+    <button onclick="change(0,'')">入校</button>
+    <button onclick="change(1,'')">出校</button>
+    <button onclick="change(0,'尹佳奇')">尹佳奇入校</button>
+    <button onclick="change(1,'尹佳奇')">尹佳奇出校</button>
+    <button onclick="change(0,'韩玉双')">韩玉双入校</button>
+    <button onclick="change(1,'韩玉双')">韩玉双出校</button>
   </div>
   <div class="code" id="ruxiao" style="display: none;">
     <div class="item img" style="border-radius: 10px; overflow: hidden;">
@@ -78,7 +83,7 @@
     <div class="item">
       <div class="title">姓名</div>
       <div class="content">
-        <div class="name">韩玉双</div>
+        <div class="name" id="username1">张伟</div>
       </div>
     </div>
     <div class="item">
@@ -123,7 +128,7 @@
     <div class="item">
       <div class="title">姓名</div>
       <div class="content">
-        <div class="name">韩玉双</div>
+        <div class="name" id="username2">张伟</div>
       </div>
     </div>
     <div class="item">
@@ -144,10 +149,19 @@
   </div>
 </body>
 <script>
-  function change(index) {
+  function change(index, name) {
     let hello = document.querySelector('#hello')
     let ruxiao = document.querySelector('#ruxiao')
     let chuxiao = document.querySelector('#chuxiao')
+    if(name!='') {
+      console.log(name);
+      document.querySelector('#username1').innerHTML = name
+      document.querySelector('#username2').innerHTML = name
+    } else {
+      inputName = document.querySelector('#inputName').value;
+      document.querySelector('#username1').innerHTML = inputName!=''?inputName:'张伟'
+      document.querySelector('#username2').innerHTML = inputName!=''?inputName:'张伟'
+    }
     hello.style.display = 'none'
     if(index==0) {
       document.querySelector('#time1').innerHTML=getNowDate().toString()
@@ -176,6 +190,5 @@
     + (seconds<10?('0'+seconds):seconds);
     return now;
   }
-  console.log(getNowDate());
 </script>
 </html>
