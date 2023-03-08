@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="box" id="box1">
+      <div class="top">
+        <div class="image">
+          <img src="./imgs/img1.jpg" alt="">
+          <div class="hoverBlock"></div>
+          <div class="swiperBlock"></div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="swiper"></div>
+        <div class="swiperLine"><div class="circle"></div></div>
+      </div>
+    </div>
+    <div class="box" id="box2" style="display: none;">
+      <div class="tip">恭喜你验证成功</div>
+    </div>
+  </div>
+  <script>
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+
+    let swiperBlock = document.getElementsByClassName('swiperBlock')[0];
+    let hoverBlock = document.getElementsByClassName('hoverBlock')[0];
+    let swiperLine = document.getElementsByClassName('swiperLine')[0];
+    let circle = document.getElementsByClassName('circle')[0];
+    let isMove = false;
+
+    circle.addEventListener('mousedown', (e) => {
+      isMove = true;
+    })
+    document.addEventListener('mouseup', (e) => {
+      isMove = false;
+
+      if(Math.abs(swiperBlock.offsetLeft-hoverBlock.offsetLeft)<10) {
+        document.getElementById('box1').style.display = 'none';
+        document.getElementById('box2').style.display = '';
+      }
+
+      swiperLine.style.left = (width*0.2) + 'px';
+      swiperBlock.style.left = '0px';
+
+      swiperLine.style.width = (width*0.5) + 'px';
+    })
+    document.addEventListener('mousemove', (e) => {
+      if(isMove==true && e.clientX>0.3*width && parseInt(swiperLine.style.width.slice(0,-2))>0) {
+        let newWidth = width*0.775 - e.clientX;
+        swiperLine.style.left = (e.clientX - 0.075*width) + 'px';
+        swiperBlock.style.left = (e.clientX - 0.275*width) + 'px';
+
+        swiperLine.style.width = newWidth + 'px';
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="showTip" style="display: none; color: #fff;">
+      把手机旋转过来就可以看见了哦！
+    </div>
+    <div class="keyboardBox" style="display: none;">
+      <div class="keyboard">
+        <div class="line" id="line1">
+          <div id="27" class="block" onclick="dingdong()">ESC</div>
+          <div id="112" class="block" onclick="dingdong()">F1</div>
+          <div id="113" class="block" onclick="dingdong()">F2</div>
+          <div id="114" class="block" onclick="dingdong()">F3</div>
+          <div id="115" class="block" onclick="dingdong()">F4</div>
+          <div id="116" class="block" onclick="dingdong()">F5</div>
+          <div id="117" class="block" onclick="dingdong()">F6</div>
+          <div id="118" class="block" onclick="dingdong()">F7</div>
+          <div id="119" class="block" onclick="dingdong()">F8</div>
+          <div id="120" class="block" onclick="dingdong()">F9</div>
+          <div id="121" class="block" onclick="dingdong()">F10</div>
+          <div id="122" class="block" onclick="dingdong()">F11</div>
+          <div id="123" class="block" onclick="dingdong()">F12</div>
+          <div id="46" class="block" onclick="dingdong()">Delete</div>
+        </div>
+        <div class="line" id="line2">
+          <div id="192" class="block letter" onclick="dingdong()">`</div>
+          <div id="49" class="block letter" onclick="dingdong()">1</div>
+          <div id="50" class="block letter" onclick="dingdong()">2</div>
+          <div id="51" class="block letter" onclick="dingdong()">3</div>
+          <div id="52" class="block letter" onclick="dingdong()">4</div>
+          <div id="53" class="block letter" onclick="dingdong()">5</div>
+          <div id="54" class="block letter" onclick="dingdong()">6</div>
+          <div id="55" class="block letter" onclick="dingdong()">7</div>
+          <div id="56" class="block letter" onclick="dingdong()">8</div>
+          <div id="57" class="block letter" onclick="dingdong()">9</div>
+          <div id="48" class="block letter" onclick="dingdong()">0</div>
+          <div id="189" class="block letter" onclick="dingdong()">-</div>
+          <div id="187" class="block letter" onclick="dingdong()">+</div>
+          <div id="8" class="block alien1" onclick="dingdong()">Backspace</div>
+        </div>
+        <div class="line" id="line3">
+          <div id="9" class="block alien1" onclick="dingdong()">Tab</div>
+          <div id="81" class="block letter" onclick="dingdong()">Q</div>
+          <div id="87" class="block letter" onclick="dingdong()">W</div>
+          <div id="69" class="block letter" onclick="dingdong()">E</div>
+          <div id="82" class="block letter" onclick="dingdong()">R</div>
+          <div id="84" class="block letter" onclick="dingdong()">T</div>
+          <div id="89" class="block letter" onclick="dingdong()">Y</div>
+          <div id="85" class="block letter" onclick="dingdong()">U</div>
+          <div id="73" class="block letter" onclick="dingdong()">I</div>
+          <div id="79" class="block letter" onclick="dingdong()">O</div>
+          <div id="80" class="block letter" onclick="dingdong()">P</div>
+          <div id="219" class="block letter" onclick="dingdong()">[</div>
+          <div id="221" class="block letter" onclick="dingdong()">]</div>
+          <div id="220" class="block letter" onclick="dingdong()">\</div>
+        </div>
+        <div class="line" id="line4">
+          <div id="20" class="block alien2" onclick="dingdong()">Caps lock</div>
+          <div id="65" class="block letter" onclick="dingdong()">A</div>
+          <div id="83" class="block letter" onclick="dingdong()">S</div>
+          <div id="68" class="block letter" onclick="dingdong()">D</div>
+          <div id="70" class="block letter" onclick="dingdong()">F</div>
+          <div id="71" class="block letter" onclick="dingdong()">G</div>
+          <div id="72" class="block letter" onclick="dingdong()">H</div>
+          <div id="74" class="block letter" onclick="dingdong()">J</div>
+          <div id="75" class="block letter" onclick="dingdong()">K</div>
+          <div id="76" class="block letter" onclick="dingdong()">L</div>
+          <div id="186" class="block letter" onclick="dingdong()">;</div>
+          <div id="222" class="block letter" onclick="dingdong()">'</div>
+          <div id="13" class="block alien2" onclick="dingdong()">Enter</div>
+        </div>
+        <div class="line" id="line5">
+          <div id="16" class="block alien3" onclick="dingdong()">Shift</div>
+          <div id="90" class="block letter" onclick="dingdong()">Z</div>
+          <div id="88" class="block letter" onclick="dingdong()">X</div>
+          <div id="67" class="block letter" onclick="dingdong()">C</div>
+          <div id="86" class="block letter" onclick="dingdong()">V</div>
+          <div id="66" class="block letter" onclick="dingdong()">B</div>
+          <div id="78" class="block letter" onclick="dingdong()">N</div>
+          <div id="77" class="block letter" onclick="dingdong()">M</div>
+          <div id="188" class="block letter" onclick="dingdong()">,</div>
+          <div id="190" class="block letter" onclick="dingdong()">.</div>
+          <div id="191" class="block letter" onclick="dingdong()">/</div>
+          <div id="" class="block alien3" onclick="dingdong()">Shift</div>
+        </div>
+        <div class="line" id="line6">
+          <div id="17" class="block" onclick="dingdong()">Ctrl</div>
+          <div id="" class="block" onclick="dingdong()">Fn</div>
+          <div id="91" class="block" onclick="dingdong()">Win</div>
+          <div id="18" class="block" onclick="dingdong()">Alt</div>
+          <div id="32" class="block space" onclick="dingdong()"></div>
+          <div id="18" class="block" onclick="dingdong()">Alt</div>
+          <div id="17" class="block" onclick="dingdong()">Ctrl</div>
+          <div id="37" class="block" onclick="dingdong()">←</div>
+          <div id="38" class="block" onclick="dingdong()">↑</div>
+          <div id="39" class="block" onclick="dingdong()">→</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <audio id="dingdong" src="dingdong.wav"></audio>
+  <script>
+    let audio = document.getElementById("dingdong");
+
+    function dingdong() {
+      audio.currentTime = 0;
+      audio.play();
+    }
+
+    document.onkeydown = (e) => {
+      let keyNum=window.event ? e.keyCode :e.which;
+      keyNum = keyNum.toString()
+      let block = document.getElementById(keyNum);
+      block.click();
+      block.style.backgroundColor = '#ddd';
+      block.style.color = '#777';
+      setTimeout(() => {
+        block.style.backgroundColor = '#63cdda';
+        block.style.color = '#fff';
+      }, 100);
+    }
+
+    setInterval(() => {
+      let height = document.documentElement.clientHeight;
+      let width = document.documentElement.clientWidth;
+      if(width<height) {
+        document.getElementsByClassName('showTip')[0].style.display = '';
+        document.getElementsByClassName('keyboardBox')[0].style.display = 'none';
+      } else {
+        document.getElementsByClassName('showTip')[0].style.display = 'none';
+        document.getElementsByClassName('keyboardBox')[0].style.display = '';
+      } 
+    }, 1000);
+  </script>
+</body>
+</html>

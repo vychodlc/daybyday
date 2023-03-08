@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>  
+  <div class="container">
+    <div class="box">
+      <div class="title" id="title1">
+        <span class="titleSpan" id="titleSpan1">Beijing University of Posts and Telecommunications</span>
+      </div>
+      <div class="image" id="image1" style="background-image: url('./imgs/01.jpg');"></div>
+      <div class="text" id="text1">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, est! Sint dolorem odio ea repellendus aliquid magnam consectetur molestiae? Facilis, recusandae dolor animi eaque eius enim id dolore repellat voluptatum.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, est! Sint dolorem odio ea repellendus aliquid magnam consectetur molestiae? Facilis, recusandae dolor animi eaque eius enim id dolore repellat voluptatum.
+      </div>
+    </div>
+    <div class="box">
+      <div class="title" id="title2">
+        <span class="titleSpan" id="titleSpan2">Beijing University of Posts and Telecommunications</span>
+      </div>
+      <div class="image" id="image2" style="background-image: url('./imgs/02.jpg');"></div>
+      <div class="text" id="text2">
+        Lorem ipsum dolor sit amet consectetur, est! Sint dolorem odio ea repellendus aliquid magnam consectetur molestiae? Facilis, recusandae dolor animi eaque eius enim id dolore repellat voluptatum.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, est! Sint dolorem odio ea repellendus aliquid magnam consectetur molestiae? Facilis, recusandae dolor animi eaque eius enim id dolore repellat voluptatum.
+      </div>
+    </div>
+    <div class="box">
+      <div class="title" id="title3">
+        <span class="titleSpan" id="titleSpan3">Beijing University of Posts and Telecommunications</span>
+      </div>
+      <div class="image" id="image3" style="background-image: url('./imgs/03.jpg');"></div>
+      <div class="text" id="text3">
+        Lorem ipsum dolor sit amet consectetur, est! Sint dolorem odio ea repellendus aliquid magnam consectetur molestiae? Facilis, recusandae dolor animi eaque eius enim id dolore repellat voluptatum.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, est! Sint dolorem odio ea repellendus aliquid magnam consectetur molestiae? Facilis, recusandae dolor animi eaque eius enim id dolore repellat voluptatum.
+      </div>
+    </div>
+    <div class="box">
+      <div class="title" id="title4">
+        <span class="titleSpan" id="titleSpan4">Beijing University of Posts and Telecommunications</span>
+      </div>
+      <div class="image" id="image4" style="background-image: url('./imgs/04.jpg');"></div>
+      <div class="text" id="text4">
+        Lorem ipsum dolor sit amet consectetur, est! Sint dolorem odio ea repellendus aliquid magnam consectetur molestiae? Facilis, recusandae dolor animi eaque eius enim id dolore repellat voluptatum.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, est! Sint dolorem odio ea repellendus aliquid magnam consectetur molestiae? Facilis, recusandae dolor animi eaque eius enim id dolore repellat voluptatum.
+      </div>
+    </div>
+  </div>
+  <script>
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+
+    let image1 = document.getElementById('image1');
+    let image2 = document.getElementById('image2');
+    let image3 = document.getElementById('image3');
+    let image4 = document.getElementById('image4');
+    let title1 = document.getElementById('titleSpan1');
+    let title2 = document.getElementById('titleSpan2');
+    let title3 = document.getElementById('titleSpan3');
+    let title4 = document.getElementById('titleSpan4');
+    let text1 = document.getElementById('text1');
+    let text2 = document.getElementById('text2');
+    let text3 = document.getElementById('text3');
+    let text4 = document.getElementById('text4');
+    let swiperDistance = 0;
+    
+    let imageList = [image1,image2,image3,image4];
+    let titleList = [title1,title2,title3,title4];
+    let textList = [text1,text2,text3,text4];
+
+    document.addEventListener('scroll', ()=>{
+      let top = document.documentElement.scrollTop;
+      let topScale = top/height;
+
+      for(let i=0;i<imageList.length;i++) {        
+        let imageSwiper = ((top-height*(i+0.5))/height+0.5)*50 + 50;
+        imageList[i].style['background-position'] = '0 ' + (100-imageSwiper) + '%';
+
+        let titleSwiper = (top-height*(i+0.5))/height * 20;
+        titleList[i].style.left = titleSwiper + 10 + 'vw';
+
+        let textSwiper = (top-height*(i+0.5))/height * 100 + 70;
+        textList[i].style.top = -1 * textSwiper + 'vh';
+      }
+    })
+  </script>
+</body>
+</html>

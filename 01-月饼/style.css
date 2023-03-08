@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #192a56;
+  position: relative;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 40vw;
+  height: 40vw;
+  border-radius: 10px;
+  background-color: #eee;
+
+  border: 1px solid #fff;
+  box-shadow: 0px 10px 20px #fff;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  background-color: #e1b12c;
+}
+
+.cylinder {
+  width: 10vw;
+  height: 35vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 5vw;
+
+  border: 8px solid #ea8d1f;
+}
+
+.cylinder:nth-child(2),
+.cylinder:nth-child(8),
+.cylinder:nth-child(14) {
+  transform: translate(-50%,-50%) rotate(30deg);
+}
+.cylinder:nth-child(3),
+.cylinder:nth-child(9),
+.cylinder:nth-child(15) {
+  transform: translate(-50%,-50%) rotate(60deg);
+}
+.cylinder:nth-child(4),
+.cylinder:nth-child(10),
+.cylinder:nth-child(16) {
+  transform: translate(-50%,-50%) rotate(90deg);
+}
+.cylinder:nth-child(5),
+.cylinder:nth-child(11),
+.cylinder:nth-child(17) {
+  transform: translate(-50%,-50%) rotate(120deg);
+}
+.cylinder:nth-child(6),
+.cylinder:nth-child(12),
+.cylinder:nth-child(18) {
+  transform: translate(-50%,-50%) rotate(150deg);
+}
+
+.cylinder:nth-child(7),
+.cylinder:nth-child(8),
+.cylinder:nth-child(9),
+.cylinder:nth-child(10),
+.cylinder:nth-child(11),
+.cylinder:nth-child(12) {
+  background-color: #ffd526;
+  width: 10vw;
+  height: 33.5vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 5vw;
+  border: none;
+}
+
+.cylinder:nth-child(13),
+.cylinder:nth-child(14),
+.cylinder:nth-child(15),
+.cylinder:nth-child(16),
+.cylinder:nth-child(17),
+.cylinder:nth-child(18) {
+  background-color: #ea8d1f;
+  width: 9.4vw;
+  height: 32vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 4.7vw;
+  border: none;
+}
+
+.text {
+  width: 15vw;
+  height: 15vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #ffd526;
+  border: 0.5vw solid #ffd526;
+  border-radius: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text span {
+  font-family: "楷体","楷体_GB2312";
+  font-weight: bolder;
+  width: 15vw;
+  height: 15vw;
+  font-size: 5vw;
+  line-height: 7.5vw;
+  text-align: center;
+}

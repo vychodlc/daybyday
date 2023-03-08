@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="ball" id="ball1"></div>
+    <div class="ball" id="ball2"></div>
+    <div class="ball" id="ball3"></div>
+    <div class="box">
+      <div class="hello">
+        <p>Welcome to GitHub!</p>
+        <p>Let’s begin the adventure</p>
+      </div>
+      <div class="item" id="item1">
+        <div class="label">Enter your email</div>
+        <div class="input">
+          <div class="icon">→</div>
+          <div class="text"><input type="text" name="email" id="email"></div>
+          <div class="button" id="btn1">Continue</div>
+        </div>
+      </div>
+      <div class="item" id="item2">
+        <div class="label">Create a password</div>
+        <div class="input">
+          <div class="icon">→</div>
+          <div class="text"><input type="password" name="password" id="password"></div>
+          <div class="button" id="btn2">Continue</div>
+        </div>
+      </div>
+    </div>
+    <div class="tip" id="emailerror">Email is invalid or already taken</div>
+    <div class="pwdlevel">
+      <div class="levelitem"></div>
+      <div class="levelitem"></div>
+      <div class="levelitem"></div>
+    </div>
+    <div class="tip" id="pwdtip1" style="color: #ed4e50;">Password is too short</div>
+    <div class="tip" id="pwdtip2" style="color: #2da44e;">Password is strong</div>
+    <div class="tip" id="pwdtip">Make sure it's at least 15 characters OR at least 8 characters including a number and a lowercase letter.</div>
+    <div class="bigword">Sign Up Successful!</div>
+
+    <div class="dot"></div>
+  </div>
+  <script>
+
+    let count = 0;
+    setInterval(() => {
+      let dot = document.createElement('div');
+      dot.className = 'dot';
+      let left = parseInt(Math.random()*100);
+      let scale = parseInt(Math.random()*5);
+      dot.style.left = left + 'vw';
+      dot.style.width = scale + 'px';
+      dot.style.height = scale + 'px';
+      document.getElementsByClassName('container')[0].appendChild(dot);
+      count++;
+
+      let olddot = document.getElementsByClassName('dot')[0];
+      if(count>20) {
+        document.getElementsByClassName('container')[0].removeChild(olddot);
+      }
+    }, 1000);
+
+
+
+    let bigword = document.getElementsByClassName('bigword')[0];
+    bigword.style.display = 'none';
+    let item1 = document.getElementById('item1');
+    let item2 = document.getElementById('item2');
+    let btn1 = document.getElementById('btn1');
+    let btn2 = document.getElementById('btn2');
+    item1.style.display = 'none';
+    item2.style.display = 'none';
+    setTimeout(() => {
+      item1.style.display = '';
+    }, 5000);
+    
+    // 监听email
+    let email = document.getElementById('email');
+    let email_error = document.getElementById('emailerror');
+    email_error.style.display = 'none';
+    email.oninput = function() {
+      if(email.value.indexOf('@')!=-1) {
+        btn1.className = 'button btnactive';
+        email_error.style.display = 'none';
+        item1.getElementsByClassName('icon')[0].innerHTML = '√';
+        item1.getElementsByClassName('icon')[0].style.color = '#2da44e';
+      } else {
+        btn1.className = 'button';
+        email_error.style.display = '';
+        item1.getElementsByClassName('icon')[0].innerHTML = '→';
+        item1.getElementsByClassName('icon')[0].style.color = '#ea4aaa';
+      }
+    }
+    btn1.addEventListener('click', ()=>{
+      if(email.value.indexOf('@')!=-1) {
+        item2.style.display = '';
+        btn1.style.visibility = 'hidden';
+      }
+    })
+
+    // 监听password
+    let password = document.getElementById('password');
+    let tip = document.getElementById('pwdtip');
+    let tip1 = document.getElementById('pwdtip1');
+    let tip2 = document.getElementById('pwdtip2');
+    tip.style.display = 'none';
+    tip1.style.display = 'none';
+    tip2.style.display = 'none';
+    
+    document.getElementsByClassName('pwdlevel')[0].style.display = 'none';
+    password.oninput = function() {
+      document.getElementsByClassName('pwdlevel')[0].style.display = 'flex';
+      let lines = document.getElementsByClassName('levelitem');
+      tip.style.display = '';
+      if(password.value.length==0) {
+        document.getElementsByClassName('pwdlevel')[0].style.display = 'none';
+        tip1.style.display = 'none';
+        tip2.style.display = 'none';
+        btn2.className = 'button';
+      } else if (password.value.length<6) {
+        lines[0].style.backgroundColor = '#ed4e50';
+        lines[1].style.backgroundColor = '#627597';
+        lines[2].style.backgroundColor = '#627597';
+        tip1.style.display = '';
+        tip2.style.display = 'none';
+        btn2.className = 'button';
+      } else {
+        lines[0].style.backgroundColor = '#2da44e';
+        lines[1].style.backgroundColor = '#2da44e';
+        lines[2].style.backgroundColor = '#2da44e';
+        tip1.style.display = 'none';
+        tip2.style.display = '';
+        btn2.className = 'button btnactive';
+      }
+    }
+    btn2.addEventListener('click', ()=>{
+      if(password.value.length>=6) {
+        document.getElementsByClassName('box')[0].style.display = 'none';
+        document.getElementsByClassName('tip')[0].style.display = 'none';
+        document.getElementsByClassName('tip')[1].style.display = 'none';
+        document.getElementsByClassName('tip')[2].style.display = 'none';
+        document.getElementsByClassName('tip')[3].style.display = 'none';
+        document.getElementsByClassName('pwdlevel')[0].style.display = 'none';
+        bigword.style.display = '';
+      }
+    })
+  </script>
+</body>
+</html>

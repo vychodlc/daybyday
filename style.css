@@ -1,0 +1,107 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-family:"Microsoft YaHei";
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  cursor: pointer;
+}
+.card:hover {
+  background-color: #81ecec;
+}
+
+.header {
+  height: 20vh;
+  width: 100vw;
+  background-image: url(./imgs/bg.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  color: #fff;
+  font-size: 20px;
+  line-height: 20vh;
+  text-align: center;
+  letter-spacing: 1rem;
+}
+
+.lineBox {
+  width: 100vw;
+  height: 80vh;
+  overflow-y: scroll;
+  padding: 5vh 20vw;
+  color: #000;
+}
+.lineBox .card {
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+  height: 35vh;
+}
+.lineBox .card .left {
+  width: 30px;
+  height: 2vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.lineBox .dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #007acc;
+
+  margin-top: calc(2.5vh - 7.5px);
+}
+.lineBox .line {
+  position: absolute;
+  background-color: #007acc;
+  width: 2px;
+  height: 35vh;
+  left: 14px;
+  top: calc(2.5vh - 7.5px);
+}
+.lineBox .card .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.lineBox .card .right .head {
+  width: 100%;
+  height: 5vh;
+  line-height: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 5vw;
+}
+.lineBox .images {
+  height: 20vh;
+  padding-left: 5vw;
+}
+.lineBox .images img {
+  margin-top: 2vh;
+  margin-right: 10px;
+  height: 20vh;
+}
+
+.card:last-child .line {
+  display: none;
+}
+
+.name {
+  font-size: 20px;
+}
+.date {
+  font-size: 0.8rem;
+  color: #999;
+}

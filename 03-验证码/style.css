@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #c7ecee;
+  position: relative;
+  /* overflow: hidden; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  width: 90vw;
+  height: 90vh;
+  background-color: #dff9fb;
+}
+
+.top {
+  height: 70vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottom {
+  height: 20vh;
+  width: 100%;
+  border-top: 2px solid #9d9d9d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.top .image {
+  width: 50vw;
+  height: 50vh;
+
+  position: relative;
+}
+.top .image img {
+  width: 50vw;
+  height: 50vh;
+}
+.top .image .swiperBlock {
+  background: url('./imgs/img1.jpg') no-repeat;
+  background-size: 50vw 50vh;
+
+  background-position: -25vw -15vh;
+
+  width: 10vh;
+  height: 10vh;
+  border: 3px solid #fff;
+
+  position: absolute;
+  left: 0px;
+  top: 30%;
+}
+.top .image .hoverBlock {
+  width: 10vh;
+  height: 10vh;
+  background-color: #bbbbbb99;
+  border: 3px solid #fff;
+
+  position: absolute;
+  left: 50%;
+  top: 30%;
+}
+.bottom .swiper {
+  width: 50vw;
+  height: 10vh;
+  border-radius: 5vh;
+  background-color: #686de0;
+}
+.bottom .swiperLine {
+  width: 50vw;
+  height: 10vh;
+  border-radius: 5vh;
+  background-color: #95afc0;
+  position: absolute;
+  left: 20vw;
+  top: 5vh;
+}
+.bottom .swiperLine .circle {
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  background-color: #4834d4;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  cursor: pointer;
+}
+
+.tip {
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+  line-height: 90vh;
+}
